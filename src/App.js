@@ -5,6 +5,7 @@ import CustomFooter from "./components/CustomFooter.jsx";
 import HarryPotterArea from "./components/HarryPotterArea.jsx";
 import MatrixArea from "./components/MatrixArea.jsx";
 import EvangelionArea from "./components/EvangelionArea.jsx";
+import EditProfile from "./components/EditProfile.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <HarryPotterArea />
         <MatrixArea />
         <EvangelionArea />
+        <EditProfile />
       </main>
       <footer className="container mt-5">
         <CustomFooter />
