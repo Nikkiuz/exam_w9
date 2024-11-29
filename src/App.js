@@ -2,15 +2,20 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CustomNavbar from "./components/CustomNavbar";
 import CustomFooter from "./components/CustomFooter.jsx";
+import HarryPotterArea from "./components/HarryPotterArea.jsx";
+import MatrixArea from "./components/MatrixArea.jsx";
 
 function App() {
   return (
     <div className="App" bg="dark" data-bs-theme="dark">
-      <header className="App-header">
+      <header>
         <CustomNavbar />
       </header>
-      <main></main>
-      <footer className="container">
+      <main>
+        <HarryPotterArea />
+        <MatrixArea />
+      </main>
+      <footer className="container mt-5">
         <CustomFooter />
       </footer>
     </div>
