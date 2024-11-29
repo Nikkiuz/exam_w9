@@ -15,7 +15,7 @@ const EditProfile = () => {
         <Row>
           <Col xs={5} md={4} className="ms-md-2 me-md-0">
             <img
-              src="https://www.placedog.net/150/150"
+              src="assets/profile.jpeg"
               alt="Profile"
               className="img-fluid"
             />
@@ -90,7 +90,7 @@ const EditProfile = () => {
 
               {/* Autoplay Controls */}
               <Col xs={12}>
-                  <h4 className="text-secondary mt-3">Autoplay controls</h4>
+                <h4 className="text-secondary mt-3">Autoplay controls</h4>
                 <Container className="d-flex flex-column">
                   <Form.Check
                     type="checkbox"
