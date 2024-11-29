@@ -4,6 +4,7 @@ import CustomNavbar from "./components/CustomNavbar";
 import CustomFooter from "./components/CustomFooter.jsx";
 import HarryPotterArea from "./components/HarryPotterArea.jsx";
 import MatrixArea from "./components/MatrixArea.jsx";
+import EvangelionArea from "./components/EvangelionArea.jsx";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <main>
         <HarryPotterArea />
         <MatrixArea />
+        <EvangelionArea />
       </main>
       <footer className="container mt-5">
         <CustomFooter />

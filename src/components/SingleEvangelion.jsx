@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { Col, Card } from "react-bootstrap";
 
-class SingleMatrix extends Component {
+class SingleEvangelion extends Component {
   render() {
     return (
       <Col sm={4} md={6} lg={2}>
@@ -9,12 +9,12 @@ class SingleMatrix extends Component {
           <Card.Img
             className="img-fluid"
             variant="top"
-            src={this.props.SingleMtx.Poster}
-            alt={this.props.SingleMtx.Title + " cover"}
+            src={this.props.SingleEva.Poster}
+            alt={this.props.SingleEva.Title + " cover"}
           />
           <Card.Body className="text-white d-flex flex-column">
             <Card.Title className="fs-5">
-              {this.props.SingleMtx.Title}
+              {this.props.SingleEva.Title}
             </Card.Title>
           </Card.Body>
         </Card>
@@ -23,4 +23,4 @@ class SingleMatrix extends Component {
   }
 }
 
-export default SingleMatrix;
+export default SingleEvangelion;

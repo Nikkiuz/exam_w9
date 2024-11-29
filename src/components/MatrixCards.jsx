@@ -1,12 +1,12 @@
 import { Component } from "react";
 import SingleMatrix from "./SingleMatrix";
 
-class HarryPotterCards extends Component {
+class MatrixCards extends Component {
   render() {
     return this.props.matrixList.map((film) => {
-      return <SingleMatrix key={film.imdbID} SingleMatrix={film} />;
+      return <SingleMatrix key={film.imdbID} SingleMtx={film} />;
     });
   }
 }
 
-export default HarryPotterCards;
+export default MatrixCards;

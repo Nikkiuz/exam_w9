@@ -33,7 +33,7 @@ class HarryPotterArea extends Component {
   render() {
     return (
       <Container>
-        <h4 className="text-white mt-4 text-start">Harry Potter Saga</h4>
+        <h4 className="text-white mt-4 mb-3 text-start">Harry Potter Saga</h4>
         <Row className="gy-2">
           <HarryPotterCards hpList={this.state.harryPotterFilms} />
         </Row>

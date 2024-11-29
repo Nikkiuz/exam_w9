@@ -1,6 +1,6 @@
 import { Component } from "react";
-import MatrixCards from "./MatrixCards";
 import { Container, Row } from "react-bootstrap";
+import MatrixCards from "./MatrixCards";
 
 class MatrixArea extends Component {
   state = {
@@ -17,7 +17,7 @@ class MatrixArea extends Component {
         }
       })
       .then((arrayOfMatrix) => {
-        console.log("Hp Film", arrayOfMatrix.Search);
+        console.log("Matrix Films", arrayOfMatrix.Search);
         this.setState({
           matrixFilms: arrayOfMatrix.Search,
         });
@@ -33,9 +33,9 @@ class MatrixArea extends Component {
   render() {
     return (
       <Container>
-        <h4 className="text-white mt-4 text-start">The Matrix Saga</h4>
+        <h4 className="text-white mt-4 mb-3 text-start">The Matrix Saga</h4>
         <Row className="gy-2">
-          <MatrixCards hpList={this.state.matrixFilms} />
+          <MatrixCards matrixList={this.state.matrixFilms} />
         </Row>
       </Container>
     );
