@@ -110,7 +110,7 @@ const EditProfile = () => {
       </Container>
 
       <Container className="mt-4 mb-4">
-        <hr className="text-white mb-4" style={{ width: "100%" }} />
+        <hr className="text-white mb-4" style={{ width: "100%"}} />
         <div className="text-center">
           <Row>
             <Col>
