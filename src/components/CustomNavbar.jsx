@@ -5,20 +5,20 @@ const CustomNavbar = () => {
     <Navbar
       collapseOnSelect
       expand="lg"
-      bg="dark"
-      data-bs-theme="dark"
-      className="text-white"
+      bg="black"
+      data-bs-theme="black"
+      className="text-white "
     >
-      <Container fluid>
-        <Navbar.Brand href="#home" className="text-warning">
+      <Container fluid className="bg-black">
+        <Navbar.Brand href="#home">
           <img src="assets/netflix_logo.png" alt="" width={100} />
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
-          className="text-white"
+          className="text-white bg-black"
         />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto d-flex align-items-center">
+        <Navbar.Collapse id="responsive-navbar-nav" className="bg-black">
+          <Nav className="ms-auto d-flex align-items-center bg-black">
             <Nav.Link href="#features" className="text-white fs-5">
               Home
             </Nav.Link>
@@ -36,13 +36,16 @@ const CustomNavbar = () => {
             </Nav.Link>
             <Nav.Link href="#deets" className="text-white fs-5">
               <Form>
-                <Form.Group className="d-flex" controlId="formBasicEmail">
+                <Form.Group
+                  className="d-flex rounded"
+                  controlId="formBasicEmail"
+                >
                   <Form.Control placeholder="Search" className="me-2" />
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
                     fill="currentColor"
-                    className="bi bi-search"
+                    className="bi bi-search me-2 "
                     viewBox="0 0 16 16"
                   >
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
