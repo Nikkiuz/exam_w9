@@ -5,16 +5,15 @@ import CustomFooter from "./components/CustomFooter.jsx";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" bg="dark" data-bs-theme="dark">
       <header className="App-header">
         <CustomNavbar />
       </header>
       <main></main>
-      <footer >
+      <footer className="container">
         <CustomFooter />
       </footer>
     </div>
-    
   );
 }
 
