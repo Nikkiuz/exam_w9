@@ -5,7 +5,7 @@ const EditProfile = () => {
   return (
     <>
       <Container className="mt-5">
-        <h1 className="text-white text-center" style={{ fontSize: "2.5em" }}>
+        <h1 className="text-white text-start" style={{ fontSize: "2.5em" }}>
           Edit Profile
         </h1>
         <hr className="text-white" style={{ width: "100%" }} />
