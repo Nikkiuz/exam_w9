@@ -5,7 +5,7 @@ class SingleHarryPotter extends Component {
   render() {
     return (
       <Col sm={4} md={6} lg={2}>
-        <Card className="bg-dark h-100">
+        <Card className="bg-dark w-100 h-100">
           <Card.Img
             className="img-fluid"
             variant="top"
