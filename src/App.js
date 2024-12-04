@@ -1,16 +1,16 @@
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import CustomNavbar from "./components/CustomNavbar";
-import CustomFooter from "./components/CustomFooter.jsx";
-import HarryPotterArea from "./components/HarryPotterArea.jsx";
-import MatrixArea from "./components/MatrixArea.jsx";
-import EvangelionArea from "./components/EvangelionArea.jsx";
-import EditProfile from "./components/EditProfile.jsx";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Row, Col } from "react-bootstrap";
-import NotFound from "./components/NotFound.jsx";
-import TvShows from "./components/TvShows.jsx";
-import Details from "./components/Details.jsx";
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import CustomNavbar from './components/CustomNavbar'
+import CustomFooter from './components/CustomFooter.jsx'
+import HarryPotterArea from './components/HarryPotterArea.jsx'
+import MatrixArea from './components/MatrixArea.jsx'
+import EvangelionArea from './components/EvangelionArea.jsx'
+import EditProfile from './components/EditProfile.jsx'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Row, Col } from 'react-bootstrap'
+import NotFound from './components/NotFound.jsx'
+import TvShows from './components/TvShows.jsx'
+import Details from './components/Details.jsx'
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
             />
             <Route path="/tvShows" element={<TvShows />} />
             <Route path="/profile" element={<EditProfile />} />
-            <Route path="/details" element={<Details />} />
+            <Route path="/showDetails/:movieId" element={<Details />} />
             <Route
               path="*"
               element={
@@ -51,7 +51,7 @@ function App() {
         </footer>
       </div>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App
