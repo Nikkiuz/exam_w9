@@ -1,9 +1,9 @@
-import SingleTvShow from "./SingleTvShow";
+// import SingleTvShow from "./SingleTvShow";
 
-const TvCards = (props) => {
-  return props.TvList.map((show) => {
-    return <SingleTvShow key={show.imdbID} SingleTv={show} />;
-  });
-};
+// const TvCards = (props) => {
+//   return props.TvList.map((show) => {
+//     return <SingleTvShow key={show.imdbID} SingleTv={show} />;
+//   });
+// };
 
-export default TvCards;
+// export default TvCards;

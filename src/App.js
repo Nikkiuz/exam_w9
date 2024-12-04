@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
 import NotFound from "./components/NotFound.jsx";
 import TvShows from "./components/TvShows.jsx";
+import Details from "./components/Details.jsx";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             />
             <Route path="/tvShows" element={<TvShows />} />
             <Route path="/profile" element={<EditProfile />} />
+            <Route path="/details" element={<Details />} />
             <Route
               path="*"
               element={

@@ -1,6 +1,13 @@
 import { useState, useEffect } from "react";
-import { Container, ListGroup, Row, Spinner, Alert } from "react-bootstrap";
-import TvCards from "./TvCards";
+import {
+  Container,
+  ListGroup,
+  Row,
+  Spinner,
+  Alert,
+  Card,
+  Col,
+} from "react-bootstrap";
 
 const TvShows = () => {
   const [tvShows, setTvShows] = useState([]);
@@ -46,9 +53,25 @@ const TvShows = () => {
           <ListGroup.Item>Non ci sono film con questo nome!</ListGroup.Item>
         </ListGroup>
       )}
-      <Row className="gy-2">
-        <TvCards TvList={tvShows} />
-      </Row>
+      {tvShows.map((show) => {
+        return (
+          <Row className="gy-2" key={show.imdbID}>
+            <Col sm={4} md={6} lg={2}>
+              <Card className="bg-dark h-100">
+                <Card.Img
+                  className="img-fluid"
+                  variant="top"
+                  src={show.Poster}
+                  alt={show.Title + " cover"}
+                />
+                <Card.Body className="text-white d-flex flex-column">
+                  <Card.Title className="fs-5">{show.Title}</Card.Title>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        );
+      })}
     </Container>
   );
 };
