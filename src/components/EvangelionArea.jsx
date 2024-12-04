@@ -1,16 +1,19 @@
-import { Component } from "react";
+import { useState, useEffect } from "react";
 import { Container, Row, ListGroup, Spinner, Alert } from "react-bootstrap";
 import EvangelionCards from "./EvangelionCards";
 
-class EvangelionArea extends Component {
-  state = {
-    evangelionFilms: [],
-    isLoading: true,
-    isError: false,
-  };
+const EvangelionArea = () => {
+  const [evangelionFilms, setEvangelionFilms] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+  // state = {
+  //   evangelionFilms: [],
+  //   isLoading: true,
+  //   isError: false,
+  // };
 
-  getEva = () => {
-    fetch("http://www.omdbapi.com/?i=tt3896198&apikey=f95122d7&s=Evangelion")
+  const getEva = () => {
+    fetch("http://www.omdbapi.com/?i=tt3896198&apikey=f95122d7&s=evangelion")
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -20,50 +23,49 @@ class EvangelionArea extends Component {
       })
       .then((arrayOfEva) => {
         console.log("Evangelion Films", arrayOfEva.Search);
-        this.setState({
-          evangelionFilms: arrayOfEva.Search,
-          isLoading: false,
-        });
+        setEvangelionFilms(arrayOfEva.Search);
+        setLoading(false);
+        // this.useState({
+        //   evangelionFilms: arrayOfEva.Search,
+        //   loading: false,
+        // });
       })
       .catch((err) => {
         console.log(err);
-        this.setState({
-          isLoading: false,
-          isError: true,
-        });
+        setLoading(false);
+        setError(true);
+        // this.useState({
+        //   loading: false,
+        //   error: true,
+        // });
       });
   };
-  componentDidMount() {
-    this.getEva();
-  }
 
-  render() {
-    return (
-      <Container>
-        <h4 className="text-white mt-4 mb-3 text-start">
-          Neon Genesis Evangelion
-        </h4>
-        {this.state.isError && (
-          <Alert variant="danger">Qualcosa è andato storto!</Alert>
-        )}
-        {this.state.isLoading && (
-          <Spinner animation="border" role="status" variant="secondary">
-            <span className="visually-hidden">Loading...</span>
-          </Spinner>
-        )}
-        {!this.state.isLoading &&
-          !this.state.isError &&
-          this.state.evangelionFilms === 0 && (
-            <ListGroup>
-              <ListGroup.Item>Non ci sono film con questo nome!</ListGroup.Item>
-            </ListGroup>
-          )}
-        <Row className="gy-2">
-          <EvangelionCards evaList={this.state.evangelionFilms} />
-        </Row>
-      </Container>
-    );
-  }
-}
+  useEffect(() => {
+    getEva();
+  }, []);
+
+  return (
+    <Container>
+      <h4 className="text-white mt-4 mb-3 text-start">
+        Neon Genesis Evangelion
+      </h4>
+      {error && <Alert variant="danger">Qualcosa è andato storto!</Alert>}
+      {loading && (
+        <Spinner animation="border" role="status" variant="secondary">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      )}
+      {!loading && !error && evangelionFilms.length === 0 && (
+        <ListGroup>
+          <ListGroup.Item>Non ci sono film con questo nome!</ListGroup.Item>
+        </ListGroup>
+      )}
+      <Row className="gy-2">
+        <EvangelionCards evaList={evangelionFilms} />
+      </Row>
+    </Container>
+  );
+};
 
 export default EvangelionArea;

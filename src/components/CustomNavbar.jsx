@@ -1,6 +1,10 @@
 import { Navbar, Nav, Container, Form } from "react-bootstrap";
+import { Link, useLocation } from "react-router-dom";
 
 const CustomNavbar = () => {
+  const location = useLocation();
+  console.log("location navbar", location);
+
   return (
     <Navbar
       collapseOnSelect
@@ -11,7 +15,9 @@ const CustomNavbar = () => {
     >
       <Container fluid className="bg-black">
         <Navbar.Brand href="#home">
-          <img src="assets/netflix_logo.png" alt="" width={100} />
+          <Link to={"/"}>
+            <img src="assets/netflix_logo.png" alt="" width={100} />
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -19,9 +25,14 @@ const CustomNavbar = () => {
         />
         <Navbar.Collapse id="responsive-navbar-nav" className="bg-black">
           <Nav className="ms-auto d-flex align-items-center bg-black">
-            <Nav.Link href="#features" className="text-white fs-5">
-              Home
-            </Nav.Link>
+            <Link
+              to={"/"}
+              className={
+                location.pathname === "/" ? "nav-link" : "nav-link"
+              }
+            >
+              <div className="text-white fs-5">Home</div>
+            </Link>
             <Nav.Link href="#pricing" className="text-white fs-5">
               TV Shows
             </Nav.Link>
@@ -65,13 +76,15 @@ const CustomNavbar = () => {
               </svg>
             </Nav.Link>
             <Navbar.Brand href="#home" className="text-warning">
-              <img
-                src="assets/profile.jpeg"
-                alt="profile pic"
-                width={50}
-                height={50}
-                className="object-fit-contain border rounded"
-              />
+              <Link to={"/profile"}>
+                <img
+                  src="assets/profile.jpeg"
+                  alt="profile pic"
+                  width={50}
+                  height={50}
+                  className="object-fit-contain border rounded"
+                />
+              </Link>
             </Navbar.Brand>
           </Nav>
         </Navbar.Collapse>
