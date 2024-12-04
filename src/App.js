@@ -7,6 +7,9 @@ import MatrixArea from "./components/MatrixArea.jsx";
 import EvangelionArea from "./components/EvangelionArea.jsx";
 import EditProfile from "./components/EditProfile.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Row, Col } from "react-bootstrap";
+import NotFound from "./components/NotFound.jsx";
+import TvShows from "./components/TvShows.jsx";
 
 function App() {
   return (
@@ -27,7 +30,18 @@ function App() {
                 </>
               }
             />
+            <Route path="/tvShows" element={<TvShows />} />
             <Route path="/profile" element={<EditProfile />} />
+            <Route
+              path="*"
+              element={
+                <Row className="justify-content-center mt-3">
+                  <Col xs={12} md={8} lg={6}>
+                    <NotFound />
+                  </Col>
+                </Row>
+              }
+            />
           </Routes>
         </main>
         <footer className="container mt-5">
